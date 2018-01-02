@@ -128,24 +128,24 @@ same subnet.
 After deploying the nodes, navigate to the build folder (`build/
 nodes`) and move some of the individual node folders to 
 separate machines on the same subnet (e.g. using a USB key). It is important 
-that no nodes - including the controller node - end up on more than one 
+that no nodes - including the network map/notary node - end up on more than one 
 machine. Each computer should also have a copy of `runnodes` and 
 `runnodes.bat`.
 
 For example, you may end up with the following layout:
 
-* Machine 1: `controller`, `partya`, `runnodes`, `runnodes.bat`
-* Machine 2: `partyb`, `partyc`, `runnodes`, `runnodes.bat`
+* Machine 1: `NetworkMapAndNotary`, `PartyA`, `runnodes`, `runnodes.bat`
+* Machine 2: `PartyB`, `runnodes`, `runnodes.bat`
 
 You must now edit the configuration file for each node, including the 
-controller. Open each node's config file (`[nodeName]/node.conf`), and make 
+network map/notary. Open each node's config file (`[nodeName]/node.conf`), and make 
 the following changes:
 
-* Change the artemis address to the machine's ip address (e.g. 
+* Change the artemis address to the machine's IP address (e.g. 
   `artemisAddress="10.18.0.166:10005"`)
-* Change the network map address to the ip address of the machine where the 
-  controller node is running (e.g. `networkMapAddress="10.18.0.166:10002"`) 
-  (please note that the controller will not have a network map address)
+* Change the network map address to the IP address of the machine where the 
+  network map/notary node is running (e.g. `networkMapAddress="10.18.0.166:10002"`) 
+  (please note that the network map/notary will not have a network map address)
 
 Each machine should now run its nodes using `runnodes` or `runnodes.bat` 
 files. Once they are up and running, the nodes should be able to communicate 
